@@ -375,7 +375,7 @@ async def play(_, message: Message):
     if int(message.chat.id) in ACTV_CALLS:
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
-            photo="final.png",
+            photo="https://telegra.ph/file/c887aa840fa0380159a2e.jpg",
             caption="**🎵 Song:** {}\n**🕒 Duration:** {} min\n**👤 Added By:** {}\n\n**#⃣ Queued Position:** {}".format(
                 title,
                 duration,
@@ -387,7 +387,7 @@ async def play(_, message: Message):
     else:
         await callsmusic.pytgcalls.join_group_call(message.chat.id, InputAudioStream(file_path))
         await message.reply_photo(
-            photo="final.png",
+            photo="https://telegra.ph/file/c887aa840fa0380159a2e.jpg",
             reply_markup=keyboard,
             caption="**🎵 Song:** {}\n**🕒 Duration:** {} min\n**👤 Added By:** {}\n\n**▶️ Now Playing at `{}`...**".format(
                 title, duration, message.from_user.mention(), message.chat.title
